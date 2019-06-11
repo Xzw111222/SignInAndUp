@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RESET</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <script src="javascripts/jquery-1.12.4.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+    <style>
+        .msg{
+            width: 50%;
+            height: 60px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-group">
+        <label for="exampleInputEmail1">需要重置密码的用户</label>
+        <input type="text" class="form-control user" id="user" placeholder="请输入用户名">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Password</label>
+        <input type="password" class="form-control Pwd" id="pwd" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password Again</label>
+        <input type="password" class="form-control rePwd" id="rePwd" placeholder="Fill the Password Again">
+    </div>
+
+    <button type="button" class="btn btn-info btn-lg pull-right">确认</button>
+</div>
+<div class="alert alert-danger msg center-block" role="alert"></div>
+
+<script>
+    $(function () {
+        $(".btn").click(function () {
+            var name = $(".user").val();
+            var pwd = $(".Pwd").val();
+            var RePwd = $(".rePwd").val();
+
+            console.log(name,pwd, RePwd);
+            if (pwd !== RePwd) {
+                $(".msg").html("两次输入的密码不一致，请重新输入").slideDown(666).delay(5000).fadeOut(300);
+            } else if (name === "" || pwd === "" || RePwd === ""){
+                $(".msg").html("你瞎啊,总共有三个空！").slideDown(666).delay(5000).fadeOut(300);
+            } else {
+                $.ajax({
+                    url:"/resetPwd",
+                    type:"post",
+                    dataType:"json",
+                    data:{
+                        username:name,
+                        password:pwd,
+                        RePassword:RePwd
+                    },
+                    success:function (res) {
+                        console.log(res);
+
+                    },
+                    error:function (err) {
+                        console.log(err);
+                    }
+                })
+
+                window.location.href="/";
+            }
+
+
+        })
+    })
+</script>
+</body>
+</html>

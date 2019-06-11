@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+@font-face {
+    font-family: "腾祥凌黑简";
+    src: url("../font/TTLingHeiJ.ttf") format("truetype");
+}
+body{
+    font-family: "腾祥凌黑简";
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,.3)), url("../images/13.jpg") no-repeat center center;
+
+}
+.box-all{
+    width: 760px;
+    height: 480px;
+    margin: 150px auto 0 auto;
+
+    position: relative;
+    box-shadow: 2px 10px 10px rgba(0,0,0,.5);
+    overflow: hidden;
+    border-radius: 10px;
+}
+.sign-in{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left bottom,rgb(84,227,142),rgb(65,199,175));
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.sign-up{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right bottom,rgb(253,235,130),rgb(247,143,173));
+    position: absolute;
+    top: 0;
+    right: -380px;
+}
+.sign-in_panel{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right bottom,rgb(193,227,255),rgb(171,199,255));
+    position: absolute;
+    top: 0;
+    left: -380px;
+}
+.sign-up_panel{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right bottom,rgb(222,176,223),rgb(161,107,254));
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.sign-in_form{
+    padding: 70px 50px;
+    height: 100%;
+    text-align: center;
+}
+.sign-in_form>h1{
+    font-weight: bold;
+}
+.sign-in_form>p{
+    color: #ebebeb;
+    margin: 20px 0;
+}
+.sign-in_form>input{
+    border: none;
+    width: 100%;
+    padding: 12px 0 12px 6px;
+    margin: 0 0 20px 0;
+    background-color: #eeeeee;
+}
+.sign-in_form>a:link,
+.sign-in_form>a:visited{
+    color: #e8f90b;
+    display: inline-block;
+    padding: 0 30px 20px 30px;
+}
+.sign-in_form>a:active{
+    color: #2c2c2c;
+}
+.sign-in_form>.btn-SignIn,
+.sign-up_panel_form>.btn_sign_up,
+.sign-in_panel_form>.btn_sign_in,
+.sign-up_form>.register-signUp{
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    color: #eeeeee;
+    cursor: pointer;
+    background-color: rgb(239, 172, 78);
+    outline: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    box-shadow: 6px 10px 10px rgba(0,0,0,.3);
+}
+.sign-in_form>.btn-SignIn:hover,
+.sign-up_panel_form>.btn_sign_up:hover,
+.sign-in_panel_form>.btn_sign_in:hover,
+.sign-up_form>.register-signUp:hover{
+    background-color: rgba(239, 172, 78,.8);
+}
+.sign-in_form>.btn-SignIn:active,
+.sign-up_panel_form>.btn_sign_up:active,
+.sign-in_panel_form>.btn_sign_in:active,
+.sign-up_form>.register-signUp:active{
+    transform: scale(0.9);
+}
+.remPwd{
+    width: 16px!important;
+}
+/* 欢迎注册页面 */
+.sign-up_panel_form{
+    padding: 70px 46px;
+    height: 100%;
+    text-align: center;
+}
+.sign-up_panel_form>h1{
+    margin-bottom: 40px;
+}
+.sign-up_panel_form>p{
+    margin: 30px 0 45px 0;
+    color: #eeeeee;
+}
+/* 欢迎注册页面 */
+
+/* 欢迎登录页面 */
+.sign-in_panel_form{
+    padding: 70px 46px;
+    height: 100%;
+    text-align: center;
+}
+.sign-in_panel_form>h2{
+    margin: 40px 0 30px 0;
+}
+.sign-in_panel_form>p{
+    color: #fbfbfb;
+    margin-bottom: 40px;
+}
+
+/* 欢迎登录页面 */
+
+/* 注册 */
+.sign-up_form{
+    padding: 70px 41px;
+    height: 100%;
+    text-align: center;
+
+    position: relative;
+}
+.sign-up_form>h1{
+    margin-bottom: 20px;
+}
+.sign-up_form>p{
+    color: #fdfdfd;
+    margin-bottom: 20px;
+}
+.sign-up_form>.register-name,
+.sign-up_form>.register-pwd,
+.sign-up_form>.register-tel,
+.sign-up_form>.register-Code{
+    border: none;
+    width: 100%;
+    padding: 12px 0 12px 6px;
+    margin-bottom: 10px;
+    background-color: #eeeeee;
+}
+.register-name::-webkit-input-placeholder,
+.register-pwd::-webkit-input-placeholder,
+.register-tel::-webkit-input-placeholder,
+.register-Code::-webkit-input-placeholder{
+    color: orange;
+}
+.sign-up_form>.register-Code{
+    width: 63.8%;
+    float: left;
+}
+.sign-up_form>.register-getCode{
+    border: none;
+    width: 34%;
+    padding: 10.9px 7px;
+    margin-bottom: 10px;
+    outline: none;
+    cursor: pointer;
+}
+.sign-up_form>.register-getCode:hover{
+    background-color: #d7d7d7;
+}
+.sign-up_form>.register-signUp{
+    margin-top: 10px;
+    color: #f9f9f9;
+}
+
+/* 弹窗提示 */
+.msg{
+    width: 470px;
+    height: 90px;
+    background-color: #edadc2;
+    position: absolute;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 40px;
+    color: #fff;
+    display: none;
+
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.loginName::-webkit-input-placeholder,
+.loginPwd::-webkit-input-placeholder{
+    color: green;
+    font-weight: bold;
+}
+
+.hideBtn{
+    display: inline-block;
+    width: 99px;
+    height: 40px;
+    position: absolute;
+
+    top: 336px;
+    right: 42px;
+    z-index: -1;
+}
